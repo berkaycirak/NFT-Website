@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.hero {
+  padding: 6.25rem 0;
+  height: calc(100vh - 5.375rem);
+
+  &__grid {
+    min-height: 70vh;
+    min-width: 680px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    place-items: center;
+  }
+
+  &__text {
+    h1 {
+      font-size: $font-xlg;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+
+      > span {
+        display: inline-block;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $golden-puppy;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: 15px;
+    }
+    a {
+      &.btn-left {
+        background-color: $golden-puppy;
+        font-weight: bold;
+        font-size: $font-sm;
+        margin-right: 0.5rem;
+      }
+      &.btn-right {
+        color: $white;
+        font-weight: bold;
+        font-size: $font-sm;
+        border: $golden-puppy 1px solid;
+      }
+    }
+  }
+
+  &__image {
+    background-image: url('/images/hero-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 20px solid $earie-black-1;
+    border-radius: 50%;
+    width: 340px;
+    height: 340px;
+  }
+}

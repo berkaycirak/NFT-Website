@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $rich-black-fogra;
+  font-family: $font;
+  color: $white;
+}
