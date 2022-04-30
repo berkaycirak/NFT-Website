@@ -1,0 +1,93 @@
+@use "../abstracts/" as *;
+
+.about {
+  padding: 100px 0;
+
+  &__header {
+    h1 {
+      font-size: 35px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    .card-item {
+      padding: 20px;
+      border-radius: 8px;
+      background-color: $earie-black-2;
+
+      .card {
+        position: relative;
+        padding: 30px 10px 20px;
+        border: 1px solid $onyx-1;
+        border-radius: 4px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          background: $sonic-silver;
+          border-radius: 10px;
+          right: -2px;
+          bottom: -2px;
+          transition: all 200ms ease-in-out;
+        }
+
+        &::before {
+          width: 3px;
+          height: 100px;
+        }
+        &::after {
+          width: 100px;
+          height: 3px;
+        }
+
+        &-number {
+          position: absolute;
+          top: -15px;
+          left: -15px;
+          padding: 5px 15px;
+          border-top-left-radius: 18px;
+          border: 14px solid $earie-black-2;
+          font-size: 24px;
+          font-weight: 700;
+          background-color: $earie-black-1;
+          color: $onyx-2;
+          transition: all 300ms ease-in-out;
+        }
+
+        &-img {
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
+
+        &-title {
+          transition: all 200ms ease-in-out;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      }
+
+      &:hover {
+        .card {
+          &-title {
+            color: $golden-puppy;
+          }
+
+          &-number {
+            color: $black;
+          }
+
+          &::after,
+          &::before {
+            background-color: $golden-puppy;
+          }
+        }
+      }
+    }
+  }
+}

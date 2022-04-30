@@ -1,9 +1,9 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 .container {
   @include breakpoint-down(small) {
     max-width: 43.75rem;
   }
   max-width: 75rem;
-  padding: 0 1.5rem;
+  padding: 0 12px;
   margin: 0 auto;
 }

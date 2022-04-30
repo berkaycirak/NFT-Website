@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+.icon {
+  display: grid;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  cursor: pointer;
+}

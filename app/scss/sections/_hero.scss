@@ -2,7 +2,8 @@
 
 .hero {
   padding: 6.25rem 0;
-  height: calc(100vh - 5.375rem);
+  color: $white;
+  
 
   &__grid {
     min-height: 70vh;
@@ -12,6 +13,8 @@
     gap: 2rem;
     place-items: center;
   }
+
+  
 
   &__text {
     h1 {
