@@ -6,13 +6,21 @@ h3 {
   color: $white;
 }
 
+h2 {
+  font-size: 35px;
+}
+
 a,
 a:visited,
 a:active {
   text-decoration: none;
+  color: $quick-silver;
 }
 
 img {
   display: block;
-  
+}
+
+li {
+  list-style: none;
 }

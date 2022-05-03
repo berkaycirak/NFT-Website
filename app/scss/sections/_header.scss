@@ -1,6 +1,7 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .header {
+  position: relative;
   padding: 1.25rem 0;
   border-bottom: 1px solid $onyx-1;
   &__logo {
@@ -13,27 +14,23 @@
       display: inline-block;
       font-size: 15px;
       padding: 8px 10px;
-      box-shadow: inset 0 0 0 0 $red-crayola;
       color: $white;
-      transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      border-radius: 5px;
+      transition: color 0.3s ease-in-out;
 
-      // &::after {
-      //   content: '';
-      //   position: absolute;
-      //   width: 2px;
-      //   height: 10px;
-      //   background: linear-gradient($black, $red-crayola);
-      //   bottom: -20%;
-      //   left: 50%;
-      //   opacity: 0;
-      //   transition: opacity 300ms ease-in-out;
-      // }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 10px;
+        background: linear-gradient($black, $red-crayola);
+        bottom: -20%;
+        left: 50%;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
 
       &:hover {
-        box-shadow: inset 100px 0 0 0 $red-crayola;
-        color: $black;
-
+        color: $red-crayola;
         &::after {
           opacity: 1;
         }
@@ -43,32 +40,92 @@
 
   &__right {
     .toggle {
-      > span {
-        display: block;
-        height: 2px;
-        width: 25px;
-        background-color: $white;
+      cursor: pointer;
+      position: relative;
+      // For hamburger menu opening
 
-        &:not(:last-child) {
-          margin-bottom: 4px;
+      .hamburger {
+        &.opened {
+          > span:first-child {
+            transform: rotate(45deg);
+          }
+          > span:nth-child(2) {
+            opacity: 0;
+          }
+          > span:last-child {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      a {
+        > span {
+          display: block;
+          height: 2px;
+          width: 26px;
+          background-color: $white;
+          transition: all 300ms ease-in-out;
+          transform-origin: 3px 1px;
+
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .header__menu {
+        position: absolute;
+        width: 150px;
+        top: calc(100% + 34px);
+        right: 0;
+        background-color: $onyx-1;
+        border-radius: 5px;
+        padding: 10px 15px;
+        // visibility: hidden;
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: top right;
+        transition: all 200ms ease-in-out;
+        a {
+          display: block;
+          font-size: 14px;
+          color: $white;
+          background: transparent;
+          padding: 5px 10px;
+          border-radius: 4px;
+          &:hover {
+            background-color: $gray-web;
+          }
+        }
+
+        &.active {
+          transform: scale(1);
+          // visibility: visible;
+          opacity: 1;
         }
       }
     }
-    .search {
-      width: 13.375rem;
-      height: 3.125rem;
-      padding: 0 1rem;
-      margin-left: 2rem;
-      background-color: $earie-black-1;
-      color: $gray-web;
-      border: 1px solid $onyx-1;
-      border-radius: 5px;
-      font-size: $font-med;
-    }
 
     .cta {
-      margin-left: 1rem;
-      background-color: $golden-puppy;
+      @include breakpoint-up(large) {
+        display: flex;
+      }
+      .search {
+        width: 13.375rem;
+        height: 3.125rem;
+        padding: 0 1rem;
+        margin-left: 2rem;
+        background-color: $earie-black-1;
+        color: $gray-web;
+        border: 1px solid $onyx-1;
+        border-radius: 5px;
+        font-size: $font-med;
+      }
+      button {
+        margin-left: 1rem;
+        background-color: $golden-puppy;
+        color: $black;
+        text-align: center;
+      }
     }
   }
 }

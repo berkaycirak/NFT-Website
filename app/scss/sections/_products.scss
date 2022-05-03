@@ -1,10 +1,21 @@
 @use "../abstracts" as *;
 
 .products {
+  user-select: none;
   &__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    grid-template-columns: 1fr;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint-up(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   padding: 100px 0;
@@ -13,11 +24,14 @@
     margin-bottom: 60px;
     h2 {
       font-size: 35px;
+      @include breakpoint-down(small) {
+        font-size: 19px;
+      }
     }
 
     button {
       background-color: $golden-puppy;
-      font-size: 14px;
+      font-size: 12px;
       &:hover {
         opacity: 0.93;
       }
@@ -27,7 +41,7 @@
     background-color: $earie-black-1;
     border: 1px solid $onyx-2;
     padding: 18px;
-    width: 325px;
+    width: 100%;
     border-radius: 10px;
     p {
       font-size: 13px;

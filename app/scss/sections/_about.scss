@@ -5,16 +5,30 @@
 
   &__header {
     h1 {
-      font-size: 35px;
+      font-size: 18px;
+      @include breakpoint-up(medium) {
+        font-size: 36px;
+      }
       text-align: center;
       margin-bottom: 60px;
     }
   }
 
   &__cards {
+    user-select: none;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    grid-template-columns: 1fr;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint-up(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
     .card-item {
       padding: 20px;
       border-radius: 8px;

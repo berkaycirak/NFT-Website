@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 *,
 *::before,
@@ -8,10 +8,25 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: $rich-black-fogra;
   font-family: $font;
   color: $quick-silver;
   line-height: 1.3;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: $rich-black-fogra;
+  border-left: 1px solid $onyx-1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $golden-puppy;
 }

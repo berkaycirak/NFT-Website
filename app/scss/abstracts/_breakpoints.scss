@@ -3,18 +3,18 @@
   //styles go here
 }
 
-// 1024px, 1200px, 1400px
+// 640px, 1024px, 1200px
 $breakpoints-up: (
-  'medium': '64em',
-  'large': '75em',
-  'xlarge': 87.5em,
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "75em",
 );
 
-// 1023px, 1199px, 1399px
+// 639px, 1023px, 1199px
 $breakpoints-down: (
-  'small': '63.937em',
-  'medium': '74.937em',
-  'large': '87.437em',
+  "small": "39.937em",
+  "medium": "63.937em",
+  "large": "74.937em",
 );
 
 @mixin breakpoint-up($size) {
@@ -30,14 +30,25 @@ $breakpoints-down: (
 }
 
 // Visibility
-
-.hide-for-desktop {
-  @include breakpoint-up(large) {
+.hide-for-xlarge {
+  @include breakpoint-up((xlarge)) {
     display: none;
   }
 }
-.hide-for-mobile {
+
+.hide-for-desktop {
+  @include breakpoint-down(large) {
+    display: none;
+  }
+}
+.hide-for-tablet {
   @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(small) {
     display: none;
   }
 }
