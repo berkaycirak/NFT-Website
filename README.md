@@ -4,6 +4,9 @@ SASS (including BEM and 7+1 Pattern methods)
 This site is also responsive for mobile, tablet and desktop
 
 
-# <h1 align="center">DEMO</h1> 
+<h1 align="center">DEMO</h1> 
 
 ![Desktop Demo](https://user-images.githubusercontent.com/81809211/166417787-41677ad3-20f9-454d-aa5e-72b527747214.png)
+
+<h2>For live demo, click below link</h2> 
+https://your-nft.netlify.app/
